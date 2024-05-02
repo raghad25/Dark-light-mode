@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Blog</title>
+<style>
+  /* body { transition: background-color 0.5s ease; } */
+  .dark-mode { background-color: #333; color: white; }
+</style>
+</head>
+<body>
+
+<!-- Tab links -->
+<div>
+  <button id="homeTab">Home</button>
+  <button id="aboutTab">About</button>
+</div>
+
+<!-- Tab content -->
+<div id="Home" class="tab-content active-tab">
+    <h2>Article 1: The Allure of Fashion Accessories</h2>
+    <p>Accessories are the exclamation point of a woman's outfit. More than just a finishing touch, they are an essential aspect of personal style. Whether it's a statement necklace, a designer watch, or a chic handbag, the right accessory can transform an ordinary look into a stunning ensemble.</p>
+    
+    <h2>Article 2: Timeless Elegance - The Role of Watches in Fashion</h2>
+    <p>Watches are more than time-telling devices; they are symbols of tradition and history encapsulated within a showpiece with extreme craftsmanship. Not only do they serve a functional purpose, but they also offer a touch of elegance and sophistication to one's style.</p>
+  </div>
+  
+  <div id="About" class="tab-content">
+    <h2>About</h2>
+    <p>Welcome to our simple blog where we explore the fascinating world of fashion accessories. Dive into our articles to discover how these small additions to your wardrobe can make a big impact on your overall style.</p>
+  </div>
+
+<!-- Mode Switch Button -->
+<button id="modeButton">Switch to Dark Mode</button>
+
+<script>
+// Get elements from the document
+var homeTab = document.getElementById('homeTab');
+var aboutTab = document.getElementById('aboutTab');
+var homeContent = document.getElementById('Home');
+var aboutContent = document.getElementById('About');
+var modeButton = document.getElementById('modeButton');
+
+// Add click event to Home tab
+homeTab.addEventListener('click', function() {
+  homeContent.style.display = 'block'; // Show Home content
+  aboutContent.style.display = 'none'; // Hide About content
+});
+
+// Add click event to About tab
+aboutTab.addEventListener('click', function() {
+  aboutContent.style.display = 'block'; // Show About content
+  homeContent.style.display = 'none'; // Hide Home content
+});
+
+// Add click event to Mode switch button
+modeButton.addEventListener('click', function() {
+  document.body.classList.toggle('dark-mode'); // Toggle the dark mode class
+  var isDarkMode = document.body.classList.contains('dark-mode');
+  modeButton.innerText = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'; // Change button text
+});
+</script>
+
+</body>
+</html>
